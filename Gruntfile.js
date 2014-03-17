@@ -52,7 +52,7 @@ module.exports = function(grunt) {
                 },
 
                 files: {
-                    '<%= pkg.name %>.min.css': ['release/css/style.css']
+                    'style.css': ['release/css/style.css']
                 }
             }
         }
