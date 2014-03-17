@@ -18,7 +18,7 @@ In `/wp-content/themes/`
 4. Perform the first build.
 
 ```sh
-wget https://github.com/prashantpalikhe/nango/archive/master.zip
+curl -O https://github.com/prashantpalikhe/nango/archive/master.zip
 unzip master.zip <YOUR THEME>
 cd <YOUR THEME>
 # update package.json
