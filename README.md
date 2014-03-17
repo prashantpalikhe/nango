@@ -12,14 +12,14 @@ Barebone WordPress theme with Grunt and Compass support.
 
 In `/wp-content/themes/`
 
-1. Download the latest version of theme 
+1. Download the zip.
+2. Unpack the zip in your theme directory.
 2. Update the package.json with your theme name.
 3. Run `npm install`.
 4. Perform the first build.
 
 ```sh
-curl -O https://github.com/prashantpalikhe/nango/archive/master.zip
-unzip master.zip <YOUR THEME>
+unzip nango-master.zip <YOUR THEME>
 cd <YOUR THEME>
 # update package.json
 npm install
