@@ -43,12 +43,12 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     banner: '/*! \n' +
-                        'Theme Name: <%= pkg.name %> \n' +
-                        'Description: Theme for <%= pkg.name %> \n' +
-                        'Author: Prashant Palikhe \n' +
-                        'Author URI: http://www.prashantpalikhe.com \n' +
-                        'Version:  <%= pkg.version %>\n' +
-                        '*/\n'
+                        'Theme Name: <%= pkg.name %> \n' +
+                        'Description: Theme for <%= pkg.name %> \n' +
+                        'Author: Prashant Palikhe \n' +
+                        'Author URI: http://www.prashantpalikhe.com \n' +
+                        'Version:  <%= pkg.version %>\n' +
+                        '*/\n'
                 },
 
                 files: {
