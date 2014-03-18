@@ -1,6 +1,6 @@
         </main>
         
-        <footer class="footer">
+        <footer class="footer" role="contentinfo">
             <div class="l-container">
                 <p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
             </div>
