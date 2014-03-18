@@ -1,5 +1,5 @@
         <footer class="footer">
-            <div class="wrap">
+            <div class="l-container">
                 <p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
             </div>
         </footer>
