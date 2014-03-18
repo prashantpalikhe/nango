@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: ['dev/js/libs/*.js', 'dev/js/plugins/*.js', 'dev/js/custom/*.js'],
-                dest: 'release/js/<%= pkg.name %>.js'
+                dest: 'release/js/scripts.js'
             }
         },
 
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'release/js/<%= pkg.name %>.min.js': ['release/js/<%= pkg.name %>.js']
+                    'release/js/scripts.min.js': ['release/js/scripts.js']
                 }
             }
         },
