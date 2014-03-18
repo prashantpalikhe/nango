@@ -1,8 +1,6 @@
 <?php
 
-add_action('after_setup_theme', 'nango_setup_theme', 16);
+require_once('library/nango.php');
 
-function nango_setup_theme()
-{
+require_once('library/custom-post-type.php');
 
-}
