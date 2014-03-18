@@ -37,22 +37,10 @@ function nango_head() {
 function nango_enqueue_scripts_and_styles()
 {
     if (!is_admin()) {
-        wp_deregister_script('jquery');
-
-        wp_register_script(
-            'jquery',
-            "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js",
-            false,
-            null,
-            true
-        );
-
-        wp_enqueue_script('jquery');
-
         wp_register_script(
             'scripts',
             get_template_directory_uri() . '/release/js/scripts.min.js',
-            array('jquery'),
+            array(),
             false,
             true
         );
