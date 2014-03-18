@@ -22,7 +22,7 @@
 
         <div id="container">
             <header class="header" role="banner">
-                <div class="wrap">
+                <div class="l-container">
                     <h1 id="logo">
                         <a href="<?php echo home_url(); ?>" rel="nofollow">
                             <?php bloginfo('name'); ?>
