@@ -5,9 +5,25 @@
 
 .is-active, .is-visible { display: block; }
 
+.is-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
 .left { float: left; }
 .right { float: right; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 .text-center { text-align: center; }
 .nowrap { white-space: nowrap; }
+
+.is-disabled {
+    @include opacity(0.5);
+    pointer-events: none;
+}

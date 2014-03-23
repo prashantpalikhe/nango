@@ -1,6 +1,6 @@
 // =========== Base
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; vertical-align: baseline; font: inherit; font-size: 100%; }
 
 *,
 *:after,
@@ -11,34 +11,43 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 ::-moz-selection { background: lighten($black, 10%); color: $white; text-shadow: none; }
 ::selection { background: lighten($black, 10%); color: $white; text-shadow: none; }
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
 html {
-    color: lighten($black, 25%);
-    font: 300 $font-size $font-base;
-    text-rendering: optimizeLegibility;
+    color: $black;
+    font: $font-size $font-family;
     -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 body {
     line-height: 1.5em;
-    @include breakpoint($breakpoint-one) { font-size: $font-size + 1; }
-    @include breakpoint($breakpoint-two) { font-size: $font-size + 2; }
+    @media only screen and ($media-type: $media-desktop) { font-size: 15px; }
+    @media only screen and ($media-type: $media-phone) { font-size: 14px; }
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    line-height: 1.5em;
+    text-transform: uppercase; // MINE
     margin: 0 0 0.25em 0;
+    font-weight: bold;
+    font-family: $headings-font-family;
+    line-height: 1.5em;
+    &.soft {
+        color: lighten($black, 50%);
+        font-weight: 300;
+    }
 }
 
-h1 { font-size: 2em; }
-h2 { font-size: 1.4em; }
-h3 { font-size: 1.3em; }
+h1 { font-size: 2.25em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.4em; }
 h4 { font-size: 1.2em; }
-h5 { font-size: 1.1em; }
+h5 { font-size: 1.05em; }
 h6 { font-size: 1em; }
 
 p {
-    margin-bottom: $spacing;
+    margin-bottom: $margin-bottom;
     &.lead {
         font-size: 1.2em;
         line-height: 1.5em;
@@ -47,22 +56,17 @@ p {
 
 a {
     color: $color-brand;
-    cursor: pointer;
     text-decoration: none;
     &:hover { color: darken($color-brand, 50%); }
 }
 
-small {
-    font-size: 0.85em;
-    color: lighten($black, 50%);
-}
+small { color: lighten($black, 50%); font-size: 0.85em; }
 
 em { font-style: italic; }
 
 strong { font-weight: bold; }
 
 code, pre { font-family: 'courier new', monospace; }
-pre { overflow-x: auto; }
 
 abbr { border-bottom: 1px dotted lighten($black, 50%); }
 
@@ -71,25 +75,62 @@ del { text-decoration: line-through; }
 mark { background-color: lighten(yellow, 35%); }
 
 hr {
-    background-color: transparent;
+    clear: both;
+    margin: 2em $margin-bottom;
     border: solid lighten($black, 80%);
     border-width: 1px 0 0;
-    clear: both;
-    margin: 2em $spacing;
+    background-color: transparent;
 }
 
-ul, ol { margin: 0 0 $spacing 1.5em; }
+blockquote {
+    position: relative;
+    margin-bottom: $margin-bottom;
+    padding: 0 0 0 2em;
+    color: lighten($black, 50%);
+    quotes: none;
+    font: italic 1.2em Georgia, serif;
+    line-height: 1.5em;
+    &:before {
+        position: absolute;
+        top: 0.25em;
+        left: -0.15em;
+        display: block;
+        color: lighten($black, 75%);
+        content: "\201C";
+        font-size: 5em;
+    }
+    cite {
+        display: block;
+        color: lighten($black, 35%);
+        font-size: 0.85em;
+        &:before { content: "\2014 \0020"; }
+    }
+}
+
+figure {
+    display: inline-block;
+    width: 100%;
+    img {
+        display: block;
+        width: 100%;
+    }
+    figcaption {
+        color: blue;
+    }
+}
+
+ul, ol { margin: 0 0 $margin-bottom 1.5em; }
 ul { list-style: disc; }
 ol { list-style: decimal; }
 
 dl {
-    margin-bottom: $spacing;
+    margin-bottom: $margin-bottom;
     dt { font-weight: bold; }
-    dd { margin-left: $spacing; }
+    dd { margin-left: $margin-bottom; }
+}
 
-    &.advanced {
-        @include clearfix;
-        dt { @include grid(16, 0, 1); }
-        dd { @include grid(32); }
-    }
+dl.advanced {
+    @extend dl;
+    dt { @include grid(16, 0, 1); }
+    dd { @include grid(32); }
 }

@@ -119,3 +119,9 @@
     background-image: -ms-linear-gradient($side, $start, $end);
     background-image: linear-gradient($side, $start, $end);
 }
+
+@mixin ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

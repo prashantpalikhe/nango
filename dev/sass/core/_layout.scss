@@ -1,16 +1,20 @@
 // =========== Layout
 
 .l-full {
-    @include breakpoint($breakpoint-one) { @include grid(48, 1); }
+    @include grid(48, 1);
+    @media only screen and ($media-type: $media-phone) { @include grid-reset; }
 }
 .l-two-third {
-    @include breakpoint($breakpoint-one) { @include grid(32, 1); }
+    @include grid(32, 1);
+    @media only screen and ($media-type: $media-phone) { @include grid-reset; }
 }
 .l-half {
-    @include breakpoint($breakpoint-one) { @include grid(24, 1); }
+    @include grid(24, 1);
+    @media only screen and ($media-type: $media-phone) { @include grid-reset; }
 }
 .l-one-third {
-    @include breakpoint($breakpoint-one) { @include grid(16, 1);  }
+    @include grid(16, 1);
+    @media only screen and ($media-type: $media-phone) { @include grid-reset; }
 }
 .l-grid {
     @include clearfix;
@@ -18,10 +22,11 @@
 }
 .l-first { clear: left; }
 
-div.l-container {
-    max-width: $max-width;
-    margin: auto;
-    padding: 0.75em;
+.l-container {
     @include clearfix;
-    @include breakpoint($breakpoint-two) { padding: 1.5em; }
+    margin: auto;
+    padding: 80px 10px;
+    max-width: $max-width;
+
+    @media only screen and ($media-type: $media-phone) { padding: 40px 10px;}
 }

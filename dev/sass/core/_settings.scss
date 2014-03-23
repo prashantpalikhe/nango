@@ -1,37 +1,20 @@
-// =========== Settings
+$font-family: Open Sans, sans-serif;
+$headings-font-family: $font-family;
+$font-size: 14px;
 
-// Set your own font
-$font-base: sans-serif;
-
-// The base font-size, all other elements will adjust to this value
-$font-size: 15px;
-
-// The grid columns will be used in the grid mixin, 48 is standard
 $grid-columns: 48;
+$max-width: 960px;
+$margin-bottom: 1.25rem;
 
-// Adjust the website's maximum width. Will be converted to em's in the grid mixin.
-$max-width: 1140px;
+$media-type: max-width;
+$media-desktop: 960px;
+$media-tablet: 769px;
+$media-phone: 520px;
 
-// Use the vertical-spacing on margins and paddings
-$spacing: 1.5em;
+$color-brand: #ac0101;
+$color-success: #679b23;
+$color-alert: #d65223;
 
-// Adjust the border-radius
-$border-radius: 0.15em;
-
-// Media queries
-// Adjust them to you needs or add more
-$breakpoint-property: min-width;
-$breakpoint-one: 590px;
-$breakpoint-two: 769px;
-$breakpoint-three: 960px;
-
-// Colors
-// Add your own color variables
-// use color: lighten($color-brand, 20%), color: darken($color-brand, 20%) or color: rgba($color-brand, 0.5) to adjust colors
-$color-brand: #09a25f;
-$color-success: #39b924;
-$color-alert: #f3490d;
-
-$black: #0e1110;
-$gray: #ced7d3;
+$black: #000000;
+$gray: #eaeaea;
 $white: #fff;
