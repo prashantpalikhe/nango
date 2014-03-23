@@ -25,8 +25,6 @@
 .l-container {
     @include clearfix;
     margin: auto;
-    padding: 80px 10px;
+    padding: 0 10px;
     max-width: $max-width;
-
-    @media only screen and ($media-type: $media-phone) { padding: 40px 10px;}
 }
