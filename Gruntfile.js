@@ -11,8 +11,23 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         watch: {
-            files: ['dev/js/**/*.js', 'dev/sass/**/*.scss', 'images/icons/*.png', 'images/icons/*.jpg'],
-            tasks: ['concat', 'concurrent:target1', 'cssmin']
+            // options: {
+            //     livereload: true
+            // },
+            scripts: {
+                files: ['dev/js/**/*.js'],
+                tasks: ['concat', 'uglify'],
+                options: {
+                    spawn: false
+                }
+            },
+            css: {
+                files: ['dev/sass/**/*.scss', 'images/icons/*.png', 'images/icons/*.jpg'],
+                tasks: ['compass', 'cssmin'],
+                options: {
+                    spawn: false
+                }
+            }
         },
 
         concat: { // Task
