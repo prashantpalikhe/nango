@@ -1,4 +1,6 @@
 module.exports = function(grunt) {
+    // load all grunt tasks matching the `grunt-*` pattern
+    require('load-grunt-tasks')(grunt);
 
     // Project configuration.
     grunt.initConfig({
@@ -60,10 +62,4 @@ module.exports = function(grunt) {
 
     // Default task
     grunt.registerTask('default', ['concat', 'uglify', 'compass', 'cssmin']);
-
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
 };
