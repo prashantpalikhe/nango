@@ -10,10 +10,20 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        connect: {
+            server: {
+                options: {
+                    port: 9000,
+                    hostname: '0.0.0.0',
+                    livereload: true
+                }
+            }
+        },
+
         watch: {
-            // options: {
-            //     livereload: true
-            // },
+            options: {
+                livereload: true
+            },
             scripts: {
                 files: ['dev/js/**/*.js'],
                 tasks: ['concat', 'uglify'],
@@ -81,19 +91,10 @@ module.exports = function(grunt) {
                     {src: ['release/css/style.css'], dest: 'style.css'}
                 ]
             }
-        },
-
-        concurrent: {
-            target1: {
-                tasks: ['uglify', 'compass'],
-                options: {
-                    limit: 4
-                }
-            }
         }
     });
 
     // Default task
     grunt.registerTask('default', []);
-    // grunt.registerTask('default', ['concat', 'uglify', 'compass', 'cssmin']);
+    grunt.registerTask('dev', ['connect', 'watch']);
 };
