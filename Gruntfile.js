@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
         watch: {
             files: ['dev/js/**/*.js', 'dev/sass/**/*.scss', 'images/icons/*.png', 'images/icons/*.jpg'],
-            tasks: 'default'
+            tasks: ['concat', 'concurrent:target1', 'cssmin']
         },
 
         concat: { // Task
@@ -66,9 +66,19 @@ module.exports = function(grunt) {
                     {src: ['release/css/style.css'], dest: 'style.css'}
                 ]
             }
+        },
+
+        concurrent: {
+            target1: {
+                tasks: ['uglify', 'compass'],
+                options: {
+                    limit: 4
+                }
+            }
         }
     });
 
     // Default task
-    grunt.registerTask('default', ['concat', 'uglify', 'compass', 'cssmin']);
+    grunt.registerTask('default', []);
+    // grunt.registerTask('default', ['concat', 'uglify', 'compass', 'cssmin']);
 };
