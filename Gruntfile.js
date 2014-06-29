@@ -1,5 +1,9 @@
+"use strict";
+
+// Boilerplate stuff, just go with the flow
 module.exports = function(grunt) {
     // load all grunt tasks matching the `grunt-*` pattern
+    // https://github.com/sindresorhus/load-grunt-tasks
     require('load-grunt-tasks')(grunt);
 
     // Project configuration.
@@ -11,20 +15,24 @@ module.exports = function(grunt) {
             tasks: 'default'
         },
 
-        concat: {
-            dist: {
+        concat: { // Task
+            dist: { // Target
+                // Compact format
                 src: ['dev/js/libs/*.js', 'dev/js/plugins/*.js', 'dev/js/custom/*.js'],
                 dest: 'release/js/scripts.js'
             }
         },
 
         uglify: {
+            // Task level options
             options: {
                 banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
                     '<%= grunt.template.today("yyyy-mm-dd") %> */ \n',
             },
             dist: {
+                // Files object format
                 files: {
+                    // files: {dest1: src1, dest2: ['src2']}
                     'release/js/scripts.min.js': ['release/js/scripts.js']
                 }
             }
@@ -32,6 +40,7 @@ module.exports = function(grunt) {
 
         compass: {
             dist: {
+                // Target level options (overrides task level options)
                 options: {
                     sassDir: 'dev/sass',
                     cssDir: 'release/css',
@@ -52,10 +61,10 @@ module.exports = function(grunt) {
                         'Version:  <%= pkg.version %>\n' +
                         '*/\n'
                 },
-
-                files: {
-                    'style.css': ['release/css/style.css']
-                }
+                // Files array format
+                files: [
+                    {src: ['release/css/style.css'], dest: 'style.css'}
+                ]
             }
         }
     });
