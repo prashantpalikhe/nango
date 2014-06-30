@@ -23,7 +23,7 @@ unzip nango-master.zip <YOUR THEME>
 cd <YOUR THEME>
 # update package.json
 npm install
-grunt
+grunt build
 ```
 
 Now, you can activate your theme from Wordpress admin panel. Nango is setup!
