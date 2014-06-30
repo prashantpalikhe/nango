@@ -10,18 +10,15 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        connect: {
-            server: {
-                options: {
-                    port: 9000,
-                    hostname: '0.0.0.0',
-                    livereload: true
-                }
-            }
-        },
-
         watch: {
             options: {
+                // Add livereload to all the watch targets by setting livereload
+                // to true at the task level. Port is 35729
+                // Use livereload browser extension
+                // http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions
+                // or,
+                // include the livereload.js in your footer.php
+                // <script src="//localhost:35729/livereload.js"></script
                 livereload: true
             },
             scripts: {
@@ -96,5 +93,6 @@ module.exports = function(grunt) {
 
     // Default task
     grunt.registerTask('default', []);
-    grunt.registerTask('dev', ['connect', 'watch']);
+
+    grunt.registerTask('build', ['concat', 'uglify', 'compass', 'cssmin']);
 };
